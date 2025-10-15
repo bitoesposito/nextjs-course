@@ -1,4 +1,5 @@
-import { buildFeedbackPath, extractFeedback } from "../api/feedback";
+// Importa la funzione per ottenere tutti i feedback dai dati dummy
+import { getAllFeedback } from "../../dummy-data";
 
 export default function FeedbackPage(props) {
   function loadFeedbackHandler(id) {
@@ -26,8 +27,8 @@ export default function FeedbackPage(props) {
 }
 
 export async function getStaticProps() {
-  const filePath = buildFeedbackPath();
-  const data = extractFeedback(filePath);
+  // Ottiene i feedback dai dati dummy invece che dal file system
+  const data = getAllFeedback();
 
   return {
     props: {
